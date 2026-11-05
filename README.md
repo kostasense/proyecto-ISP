@@ -1,34 +1,61 @@
-# Proyecto Integrador: ISP local con monitoreo, seguridad y administración de red
+# Guía de Organización y Nomenclatura de Evidencias - ISP Local
 
-Diseño y operación de un ISP local, con enfoque en FCAPS, montado en PNETLab.
+El propósito de este documento es estandarizar la forma en que el equipo almacena, nombra y clasifica todas las evidencias gráficas, capturas, diagramas, reportes y dashboards generados a lo largo del Proyecto Integrador.
 
-## Contenido
+## 1. Estructura Oficial de Carpetas
 
-- [00 Introducción](00-Introduccion.md)
-- [01 Topología y arquitectura](01-Topologia-y-Arquitectura.md)
-- [02 Servicios implementados](02-Servicios-Implementados.md)
-- [03 Monitoreo y FCAPS](03-Monitoreo-y-FCAPS.md)
-- [04 Políticas de seguridad](04-Politicas-de-Seguridad.md)
-- [05 SLA y mesa de ayuda](05-SLA-y-Mesa-de-Ayuda.md)
-- [06 Registro de incidencias](06-Registro-de-Incidencias.md)
-- [07 Resumen final](07-Resumen-Final.md)
-
-## Estructura de evidencias
+Todas las evidencias del proyecto deben depositarse exclusivamente dentro de la carpeta raíz `Evidencias/`, respetando la siguiente jerarquía oficial:
 
 ```text
-evidencias/
-  capturas/      # capturas de configuración, pruebas, tickets, logs
-  diagramas/     # topologías, flujos y diagramas
-  reportes/      # gráficas, análisis, tablas de tiempos
-  dashboards/    # vistas del NOC
+Evidenias/
+├── capturas/
+├── diagramas/
+├── reportes/
+└── dashboards/
 ```
 
-## Convenciones
+## 2. Descripción de Directorios y Contenidos
 
-- **Nombre de evidencias:** `AAAA-MM-DD_rol_tema.ext`
-  (ejemplo: `2026-11-05_monitoreo_alerta-enlace-isp1.png`).
-- **Enlaces:** cada evidencia se enlaza desde el `.md` que la usa, el mismo día que se sube.
-- **Commits del repositorio:** `<letra>: descripción breve`
-  (ejemplo: `F: agrega catálogo de casos de falla`).
-- **Capturas:** deben mostrar fecha y hora visibles.
-- **Secretos:** nunca subir contraseñas, claves ni configuraciones sin limpiar.
+- **`capturas/`**: Almacena las capturas de pantalla de la ejecución operativa de la red, pruebas de conectividad, funcionamiento de servicios y simulaciones de incidencias.
+- **`diagramas/`**: Contiene los diagramas topológicos físicos y lógicos de la infraestructura desarrollada en PNETLab.
+- **`reportes/`**: Agrupa los reportes de rendimiento, líneas base, estadísticas de consumo y exportaciones de datos técnicos.
+- **`dashboards/`**: Guarda las vistas principales del Centro de Operaciones de Red (NOC) y paneles de monitoreo en tiempo real.
+
+## 3. Regla de Nomenclatura de Archivos
+
+Para mantener un orden riguroso y profesional en el repositorio, cualquier archivo de evidencia que se suba deberá nombrarse obligatoriamente siguiendo esta estructura:
+
+`[Fase]-[Tema]-[Descripción_Breve].[extensión]`
+
+_(Ejemplo: `F1-Configuracion-TopologiaPnetlab.png` o `F3-Fallos-CaidaISP1.png`)_
+
+---
+
+## 4. Catálogo de Abreviaturas para Nomenclatura
+
+### Fases del Proyecto:
+
+- Fase 0: Preparación y diseño -> **`F0`**
+- Fase 1: Construcción base -> **`F1`**
+- Fase 2: Operación y línea base -> **`F2`**
+- Fase 3: Simulaciones FCAPS -> **`F3`**
+- Fase 4: Integración y cierre -> **`F4`**
+
+### Temas y Módulos (Modelo FCAPS y Operación):
+
+- Gestión de fallas -> **`Fallos`**
+- Gestión de configuración -> **`Config`**
+- Gestión de consumo -> **`Account`**
+- Gestión de desempeño -> **`Perf`**
+- Gestión de seguridad -> **`Seguridad`**
+- Centro de Operaciones de Red -> **`NOC`**
+- Mesa de ayuda y tickets -> **`Soporte`**
+
+---
+
+## 5. Convenciones del Equipo
+
+- **Enlaces:** Cada evidencia se enlaza desde el archivo `.md` que la usa, el mismo día que se sube al repositorio.
+- **Commits del repositorio:** Se debe seguir el formato `<letra>: descripción breve` (por ejemplo: `F: agrega catálogo de casos de falla`).
+- **Capturas:** Todas las capturas de pantalla deben mostrar la fecha y la hora visibles.
+- **Secretos:** Queda estrictamente prohibido subir contraseñas, claves privadas ni archivos de configuración sin limpiar (sensitivos).
